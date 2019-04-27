@@ -2,12 +2,15 @@ Simple Flask App
 ================
 .. image:: https://travis-ci.com/gitaraa/se_hello_printer_app.svg?branch=master
     :target: https://travis-ci.com/gitaraa/se_hello_printer_app
-    
+
 Aplikacja Dydaktyczna wyświetlająca imię i wiadomość w różnych formatach dla zajęć
 o Continuous Integration, Continuous Delivery i Continuous Deployment.
 
 - Rozpocząnając pracę z projektem (wykorzystując virtualenv). Hermetyczne środowisko dla pojedyńczej aplikacji w python-ie:
 
+Korzystam z Statuscake , tworze konto, nastepnie test strony
+https://frozen-scrubland-86790.herokuapp.com/
+ustawiam monitowanie co 15 minut, grupa kontaktow bedzie otrzymywac informacje o zmianach na stronie.
   ::
 
     # centos, add to ~/.bashrc
