@@ -1,3 +1,7 @@
+deploy:
+  provider: heroku
+  app: frozen-scrubland-86790
+  api_key: ${HEROKU_API_KEY}
 language: python
 services:
   - docker
