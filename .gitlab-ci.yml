@@ -9,7 +9,6 @@ test:
 stages:
   - test
   - docker_build
-
 test:
   image: "python:2.7"
   stage: test
@@ -18,4 +17,9 @@ test:
   - pip install -r test_requirements.txt
   - PYTHONPATH=. py.test --vebose -s
 docker:
-  
+  image: docker:stable
+  services:
+    - doker:dind
+  stage: docker_build
+  script:
+    - docker buildc-t myapp .
