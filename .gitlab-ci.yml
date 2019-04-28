@@ -1,11 +1,3 @@
-test:
-  image: "python:2.7"
-  stage: test
-  script:
-   - pip install -r requirements.txt
-   - pip install -r test_requirements.txt
-   - PYTHONPATH=. py.test --verbose -s
-#dodajemy dockera
 stages:
   - test
   - docker_build
@@ -13,13 +5,14 @@ test:
   image: "python:2.7"
   stage: test
   script:
-  - pip install -r requirements.txt
-  - pip install -r test_requirements.txt
+  - make deps
+  - make test
   - PYTHONPATH=. py.test --vebose -s
 docker:
   image: docker:stable
   services:
-    - doker:dind
+    - docker:dind
   stage: docker_build
   script:
-    - docker buildc-t myapp .
+    - apk add --update make
+    - make docker_build
